@@ -1,0 +1,120 @@
+<!doctype html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta charset="utf-8">
+    <title>Sparkle and Shine - Professional Cleaning Services</title>
+    <style>
+        body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
+        .w3-half img{margin-bottom:-6px;margin-top:16px;opacity:0.8;cursor:pointer}
+        .w3-half img:hover{opacity:1}
+        .service-card {
+            transition: transform .2s;
+            height: 100%; /* Added to make cards equal height */
+        }
+        .service-card:hover {
+            transform: scale(1.02);
+        }
+        .logo-container {
+            margin: 20px 0;
+            text-align: center;
+        }
+        .logo-text {
+            font-size: 36px;
+            font-weight: bold;
+            line-height: 1.2;
+            color: #333;
+        }
+        .equal-height {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+    </style>
+</head>
+<body class="w3-light-grey">
+
+<!-- Header -->
+<header class="w3-container w3-center w3-padding-32 w3-teal"> 
+  <h1><b>Sparkle and Shine</b></h1>
+  <p>Professional Cleaning Services</p>
+</header>
+
+<!-- Services Section -->
+<div class="w3-row-padding w3-padding-64 w3-container" id="services">
+    <div class="w3-content">
+        <h1 class="w3-center w3-text-teal">Our Services</h1>
+        <div class="w3-row-padding w3-margin-top">
+            <!-- Garbage Cleaning Service -->
+            <div class="w3-half">
+                <div class="w3-card w3-white service-card w3-padding equal-height">
+                    <div class="w3-container w3-center">
+                        <i class="fa fa-trash w3-margin-bottom w3-text-teal" style="font-size:100px"></i>
+                        <h3>Garbage Cleaning</h3>
+                        <p>Professional garbage removal and cleaning services</p>
+                        <p>We handle all types of waste removal with eco-friendly solutions</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Window Cleaning Service -->
+            <div class="w3-half">
+                <div class="w3-card w3-white service-card w3-padding equal-height">
+                    <div class="w3-container w3-center">
+                        <i class="fa fa-window-maximize w3-margin-bottom w3-text-teal" style="font-size:100px"></i>
+                        <h3>Window Cleaning</h3>
+                        <p>Streak-free window cleaning for homes and businesses</p>
+                        <p>Interior and exterior services available‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Contact Section -->
+<div class="w3-container w3-light-grey w3-padding-64" id="contact">
+    <div class="w3-content">
+        <h1 class="w3-center w3-text-teal">Contact Us</h1>
+        <div class="w3-row w3-margin-top">
+            <div class="w3-half w3-center">
+                <div class="w3-padding-32">
+                    <span class="w3-xlarge">Get in touch today!</span><br>
+                    <i class="fa fa-phone w3-text-teal w3-xlarge"></i> Phone: (605)-961-8152 (Julian)<br>
+                    <i class="fa fa-phone w3-text-teal w3-xlarge"></i> Phone: (402)-804-0637 (Liam)<br>
+                    <i class="fa fa-envelope w3-text-teal w3-xlarge"></i> Email: SparkleaShine@outlook.com<br>
+                </div>
+                <div class="logo-container">
+                    <img src="file:///C:/Users/Julian/Downloads/ChatGPT%20Image%20Jun%205,%202025,%2010_38_09%20AM%20(3).png" alt="Italian Trulli">
+                </div>
+            </div>
+            <div class="w3-half w3-center">
+                <form class="w3-container w3-card w3-white w3-padding-32">
+                    <div class="w3-section">
+                        <label>Name</label>
+                        <input class="w3-input w3-border" type="text" name="Name" required>
+                    </div>
+                    <div class="w3-section">
+                        <label>Email</label>
+                        <input class="w3-input w3-border" type="text" name="Email" required>
+                    </div>
+                    <div class="w3-section">
+                        <label>Message</label>
+                        <input class="w3-input w3-border" type="text" name="Message" required>
+                    </div>
+                    <button type="submit" class="w3-button w3-teal w3-right">SEND</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Footer -->
+<footer class="w3-container w3-teal w3-center w3-padding-32">
+    <p>&copy; 2025 Sparkle and Shine Cleaning Services. All rights reserved.</p>
+</footer>
+
+</body>
+</html>                                  
