@@ -14,29 +14,31 @@
 
   <style>
     /* Base Font */
-    body, h1, h2, h3, h4, h5, p, label, input, button {
+    body, h1, h2, h3, h4, h5, p, label, input, button, textarea {
       font-family: 'Raleway', sans-serif;
+      color: #333; /* Dark grey text for readability */
     }
 
     /* Navbar */
     .navbar {
+      background-color: #2c3e50; /* Dark slate */
       box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     }
     .navbar .logo-text {
       font-size: 28px;
       font-weight: 700;
-      color: #fff;
+      color: #f7f7f7;
       padding-left: 24px;
     }
     .navbar .w3-bar-item.w3-button {
       font-size: 16px;
       font-weight: 500;
       padding: 12px 20px;
-      color: #fff;
+      color: #f7f7f7;
       transition: background-color 0.2s ease;
     }
     .navbar .w3-bar-item.w3-button:hover {
-      background-color: rgba(255, 255, 255, 0.2);
+      background-color: rgba(247, 247, 247, 0.1);
     }
 
     /* Hero Section */
@@ -52,12 +54,12 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background-color: rgba(0, 128, 128, 0.6); /* Teal overlay */
+      background-color: rgba(44, 62, 80, 0.6); /* Dark overlay */
     }
     .hero-text {
       position: relative;
       z-index: 1;
-      color: #fff;
+      color: #f7f7f7;
       text-align: center;
       padding: 80px 20px;
     }
@@ -76,7 +78,7 @@
     .section-heading {
       font-size: 32px;
       font-weight: 700;
-      color: #00675b; /* Darker teal */
+      color: #2c3e50; /* Dark slate */
       margin-bottom: 24px;
       text-align: center;
     }
@@ -99,14 +101,14 @@
     }
     .service-icon {
       font-size: 96px;
-      color: #00897b;
+      color: #2c3e50; /* Dark icon color */
       margin: 24px 0 12px;
     }
     .service-card h3 {
       font-size: 22px;
       font-weight: 600;
       margin-bottom: 12px;
-      color: #004d40;
+      color: #2c3e50;
     }
     .service-card p {
       font-size: 16px;
@@ -119,7 +121,7 @@
       display: block;
       text-align: center;
       padding: 12px;
-      background-color: #00897b;
+      background-color: #2c3e50;
       color: #fff;
       text-decoration: none;
       font-weight: 500;
@@ -127,7 +129,7 @@
       transition: background-color 0.2s ease;
     }
     .service-card .learn-more:hover {
-      background-color: #00675b;
+      background-color: #1a252f;
     }
 
     /* Contact Section */
@@ -137,7 +139,9 @@
     }
     #contact label {
       font-weight: 600;
-      color: #333;
+      color: #2c3e50;
+      display: block;
+      margin-bottom: 6px;
     }
     #contact input, 
     #contact textarea {
@@ -147,15 +151,14 @@
       font-size: 15px;
       width: 100%;
       box-sizing: border-box;
-      margin-top: 6px;
-      margin-bottom: 16px;
+      margin-bottom: 20px;
     }
     #contact textarea {
       resize: vertical;
-      min-height: 120px;
+      min-height: 150px;
     }
     #contact button.w3-button {
-      background-color: #00897b;
+      background-color: #2c3e50;
       color: #fff;
       font-weight: 600;
       padding: 12px 24px;
@@ -165,19 +168,27 @@
       transition: background-color 0.2s ease;
     }
     #contact button.w3-button:hover {
-      background-color: #00675b;
+      background-color: #1a252f;
+    }
+
+    /* Adjust Form Column Width */
+    .contact-form-col {
+      width: 67%;
+    }
+    .contact-info-col {
+      width: 30%;
     }
 
     /* Footer */
     footer {
-      background-color: #004d40;
-      color: #fff;
+      background-color: #1a252f;
+      color: #f7f7f7;
       text-align: center;
       padding: 24px 16px;
       font-size: 14px;
     }
     footer a {
-      color: #b2dfdb;
+      color: #b2bec3;
       text-decoration: none;
     }
     footer a:hover {
@@ -185,6 +196,11 @@
     }
 
     /* Responsive Adjustments */
+    @media (max-width: 992px) {
+      .contact-form-col, .contact-info-col {
+        width: 100%;
+      }
+    }
     @media (max-width: 768px) {
       .hero-text h1 {
         font-size: 40px;
@@ -202,7 +218,7 @@
 <body class="w3-light-grey">
 
   <!-- Navbar -->
-  <div class="w3-bar navbar w3-teal">
+  <div class="w3-bar navbar">
     <div class="w3-bar-item logo-text">Sparkle &amp; Shine</div>
     <a href="#services" class="w3-bar-item w3-button w3-hide-small">Services</a>
     <a href="#contact" class="w3-bar-item w3-button w3-hide-small">Contact</a>
@@ -261,22 +277,22 @@
     <div class="w3-content" style="max-width: 900px;">
       <h2 class="section-heading">Contact Us</h2>
       <div class="w3-row w3-margin-top">
-        
-        <!-- Contact Info -->
-        <div class="w3-col m6 s12 w3-padding-24">
+
+        <!-- Contact Info (30%) -->
+        <div class="w3-col contact-info-col w3-padding-24">
           <div class="w3-center">
             <img src="images/your-logo-filename.png" alt="Sparkle & Shine Logo" style="max-width:200px; margin-bottom:24px;">
           </div>
-          <p class="w3-large w3-text-teal"><strong>Get in touch today!</strong></p>
+          <p class="w3-large"><strong>Get in touch today!</strong></p>
           <p>
-            <i class="fa fa-phone w3-text-teal"></i> <strong>Julian:</strong> (605) 961-8152<br>
-            <i class="fa fa-phone w3-text-teal"></i> <strong>Liam:</strong> (402) 804-0637<br>
-            <i class="fa fa-envelope w3-text-teal"></i> <strong>Email:</strong> SparkleaShine@outlook.com
+            <i class="fa fa-phone" style="color:#2c3e50"></i> <strong>Julian:</strong> (605) 961-8152<br>
+            <i class="fa fa-phone" style="color:#2c3e50"></i> <strong>Liam:</strong> (402) 804-0637<br>
+            <i class="fa fa-envelope" style="color:#2c3e50"></i> <strong>Email:</strong> SparkleaShine@outlook.com
           </p>
         </div>
 
-        <!-- Contact Form -->
-        <div class="w3-col m6 s12 w3-padding-24">
+        <!-- Contact Form (67%) -->
+        <div class="w3-col contact-form-col w3-padding-24">
           <form class="w3-white w3-padding-32 w3-card-4">
             <div class="w3-section">
               <label for="name">Name</label>
