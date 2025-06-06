@@ -141,31 +141,13 @@
       box-shadow: 0 2px 8px rgba(0,0,0,0.12);
       background-color: #fff;
     }
-    /* Center the contact info block */
-    .contact-info-col {
-      text-align: center;
-      padding: 24px;
-    }
-    .contact-info-col img {
-      margin-bottom: 16px;
-    }
-    .contact-info-col p {
-      margin: 8px 0;
-      line-height: 1.6;
-      font-size: 16px;
-    }
-    .contact-info-col i {
-      margin-right: 8px;
-      color: #2c3e50;
-    }
-
     #contact label {
       font-weight: 600;
       color: #2c3e50;
       display: block;
       margin-bottom: 6px;
     }
-    #contact input,
+    #contact input, 
     #contact textarea {
       border: 1px solid #ccc;
       border-radius: 4px;
@@ -202,7 +184,9 @@
     /* Adjust Form Column Width */
     .contact-form-col {
       width: 67%;
-      padding: 24px;
+    }
+    .contact-info-col {
+      width: 30%;
     }
 
     /* Footer */
@@ -309,18 +293,20 @@
       <div class="w3-row w3-margin-top">
 
         <!-- Contact Info (30%) -->
-        <div class="w3-col contact-info-col">
+        <div class="w3-col contact-info-col w3-padding-24">
           <div class="w3-center">
-            <img src="images/your-logo-filename.png" alt="Sparkle & Shine Logo" style="max-width:200px;">
+            <img src="images/your-logo-filename.png" alt="Sparkle & Shine Logo" style="max-width:200px; margin-bottom:24px;">
           </div>
-          <p><strong>Get in touch today!</strong></p>
-          <p><i class="fa fa-phone"></i>Julian: (605) 961-8152</p>
-          <p><i class="fa fa-phone"></i>Liam: (402) 804-0637</p>
-          <p><i class="fa fa-envelope"></i>Email: SparkleaShine@outlook.com</p>
+          <p class="w3-large"><strong>Get in touch today!</strong></p>
+          <p>
+            <i class="fa fa-phone" style="color:#2c3e50"></i> <strong>Julian:</strong> (605) 961-8152<br>
+            <i class="fa fa-phone" style="color:#2c3e50"></i> <strong>Liam:</strong> (402) 804-0637<br>
+            <i class="fa fa-envelope" style="color:#2c3e50"></i> <strong>Email:</strong> SparkleaShine@outlook.com
+          </p>
         </div>
 
         <!-- Contact Form (67%) -->
-        <div class="w3-col contact-form-col">
+        <div class="w3-col contact-form-col w3-padding-24">
           <form
             action="https://formspree.io/f/xdkzaeqq"
             method="POST"
