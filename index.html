@@ -1,119 +1,311 @@
 <!doctype html>
-<html>
+<html lang="en">
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <meta charset="utf-8">
-    <title>Sparkle and Shine - Professional Cleaning Services</title>
-    <style>
-        body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
-        .w3-half img{margin-bottom:-6px;margin-top:16px;opacity:0.8;cursor:pointer}
-        .w3-half img:hover{opacity:1}
-        .service-card {
-            transition: transform .2s;
-            height: 100%; /* Added to make cards equal height */
-        }
-        .service-card:hover {
-            transform: scale(1.02);
-        }
-        .logo-container {
-            margin: 20px 0;
-            text-align: center;
-        }
-        .logo-text {
-            font-size: 36px;
-            font-weight: bold;
-            line-height: 1.2;
-            color: #333;
-        }
-        .equal-height {
-            display: flex;
-            flex-direction: column;
-            height: 100%;
-        }
-    </style>
+  <meta charset="utf-8">
+  <title>Sparkle and Shine – Professional Cleaning Services</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Raleway:400,700&display=swap" rel="stylesheet">
+
+  <!-- W3.CSS and Font Awesome -->
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <style>
+    /* Base Font */
+    body, h1, h2, h3, h4, h5, p, label, input, button {
+      font-family: 'Raleway', sans-serif;
+    }
+
+    /* Navbar */
+    .navbar {
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+    .navbar .logo-text {
+      font-size: 28px;
+      font-weight: 700;
+      color: #fff;
+      padding-left: 24px;
+    }
+    .navbar .w3-bar-item.w3-button {
+      font-size: 16px;
+      font-weight: 500;
+      padding: 12px 20px;
+      color: #fff;
+      transition: background-color 0.2s ease;
+    }
+    .navbar .w3-bar-item.w3-button:hover {
+      background-color: rgba(255, 255, 255, 0.2);
+    }
+
+    /* Hero Section */
+    .hero {
+      background: url('images/hero-banner.jpg') center/cover no-repeat;
+      position: relative;
+      min-height: 320px;
+    }
+    .hero::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 128, 128, 0.6); /* Teal overlay */
+    }
+    .hero-text {
+      position: relative;
+      z-index: 1;
+      color: #fff;
+      text-align: center;
+      padding: 80px 20px;
+    }
+    .hero-text h1 {
+      font-size: 56px;
+      font-weight: 700;
+      margin-bottom: 16px;
+      letter-spacing: 1px;
+    }
+    .hero-text p {
+      font-size: 18px;
+      line-height: 1.4;
+    }
+
+    /* Section Headings */
+    .section-heading {
+      font-size: 32px;
+      font-weight: 700;
+      color: #00675b; /* Darker teal */
+      margin-bottom: 24px;
+      text-align: center;
+    }
+
+    /* Service Cards */
+    .service-card {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+      border-radius: 8px;
+      overflow: hidden;
+      background-color: #fff;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .service-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    }
+    .service-icon {
+      font-size: 96px;
+      color: #00897b;
+      margin: 24px 0 12px;
+    }
+    .service-card h3 {
+      font-size: 22px;
+      font-weight: 600;
+      margin-bottom: 12px;
+      color: #004d40;
+    }
+    .service-card p {
+      font-size: 16px;
+      color: #555;
+      line-height: 1.5;
+      padding: 0 16px 24px;
+      flex-grow: 1;
+    }
+    .service-card .learn-more {
+      display: block;
+      text-align: center;
+      padding: 12px;
+      background-color: #00897b;
+      color: #fff;
+      text-decoration: none;
+      font-weight: 500;
+      border-radius: 0 0 8px 8px;
+      transition: background-color 0.2s ease;
+    }
+    .service-card .learn-more:hover {
+      background-color: #00675b;
+    }
+
+    /* Contact Section */
+    #contact .w3-card {
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+    }
+    #contact label {
+      font-weight: 600;
+      color: #333;
+    }
+    #contact input, 
+    #contact textarea {
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      padding: 12px;
+      font-size: 15px;
+      width: 100%;
+      box-sizing: border-box;
+      margin-top: 6px;
+      margin-bottom: 16px;
+    }
+    #contact textarea {
+      resize: vertical;
+      min-height: 120px;
+    }
+    #contact button.w3-button {
+      background-color: #00897b;
+      color: #fff;
+      font-weight: 600;
+      padding: 12px 24px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background-color 0.2s ease;
+    }
+    #contact button.w3-button:hover {
+      background-color: #00675b;
+    }
+
+    /* Footer */
+    footer {
+      background-color: #004d40;
+      color: #fff;
+      text-align: center;
+      padding: 24px 16px;
+      font-size: 14px;
+    }
+    footer a {
+      color: #b2dfdb;
+      text-decoration: none;
+    }
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    /* Responsive Adjustments */
+    @media (max-width: 768px) {
+      .hero-text h1 {
+        font-size: 40px;
+      }
+      .service-icon {
+        font-size: 80px;
+      }
+      .service-card p {
+        font-size: 15px;
+      }
+    }
+  </style>
 </head>
+
 <body class="w3-light-grey">
 
-<!-- Header -->
-<header class="w3-container w3-center w3-padding-32 w3-teal"> 
-  <h1><b>Sparkle and Shine</b></h1>
-  <p>Professional Cleaning Services</p>
-</header>
+  <!-- Navbar -->
+  <div class="w3-bar navbar w3-teal">
+    <div class="w3-bar-item logo-text">Sparkle &amp; Shine</div>
+    <a href="#services" class="w3-bar-item w3-button w3-hide-small">Services</a>
+    <a href="#contact" class="w3-bar-item w3-button w3-hide-small">Contact</a>
+  </div>
 
-<!-- Services Section -->
-<div class="w3-row-padding w3-padding-64 w3-container" id="services">
-    <div class="w3-content">
-        <h1 class="w3-center w3-text-teal">Our Services</h1>
-        <div class="w3-row-padding w3-margin-top">
-            <!-- Garbage Cleaning Service -->
-            <div class="w3-half">
-                <div class="w3-card w3-white service-card w3-padding equal-height">
-                    <div class="w3-container w3-center">
-                        <i class="fa fa-trash w3-margin-bottom w3-text-teal" style="font-size:100px"></i>
-                        <h3>Garbage Cleaning</h3>
-                        <p>Professional garbage removal and cleaning services</p>
-                        <p>We handle all types of waste removal with eco-friendly solutions</p>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Window Cleaning Service -->
-            <div class="w3-half">
-                <div class="w3-card w3-white service-card w3-padding equal-height">
-                    <div class="w3-container w3-center">
-                        <i class="fa fa-window-maximize w3-margin-bottom w3-text-teal" style="font-size:100px"></i>
-                        <h3>Window Cleaning</h3>
-                        <p>Streak-free window cleaning for homes and businesses</p>
-                        <p>Interior and exterior services available‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ </p>
-                    </div>
-                </div>
-            </div>
-        </div>
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-text">
+      <h1>Sparkle &amp; Shine</h1>
+      <p>Your Trusted Partner for Professional Window &amp; Garbage Cleaning</p>
     </div>
-</div>
+  </section>
 
-<!-- Contact Section -->
-<div class="w3-container w3-light-grey w3-padding-64" id="contact">
-    <div class="w3-content">
-        <h1 class="w3-center w3-text-teal">Contact Us</h1>
-        <div class="w3-row w3-margin-top">
-            <div class="w3-half w3-center">
-                <div class="w3-padding-32">
-                    <span class="w3-xlarge">Get in touch today!</span><br>
-                    <i class="fa fa-phone w3-text-teal w3-xlarge"></i> Phone: (605)-961-8152 (Julian)<br>
-                    <i class="fa fa-phone w3-text-teal w3-xlarge"></i> Phone: (402)-804-0637 (Liam)<br>
-                    <i class="fa fa-envelope w3-text-teal w3-xlarge"></i> Email: SparkleaShine@outlook.com<br>
-                </div>
-                <div class="logo-container">
-                   <img src="images/your-logo-filename.png" alt="Sparkle & Shine Logo"></div>
+  <!-- Services Section -->
+  <section id="services" class="w3-container w3-padding-64">
+    <div class="w3-content" style="max-width: 1000px;">
+      <h2 class="section-heading">Our Services</h2>
+      <div class="w3-row-padding w3-margin-top">
+        
+        <!-- Garbage Cleaning Card -->
+        <div class="w3-col m6 s12 w3-margin-bottom">
+          <div class="service-card">
+            <div class="w3-center">
+              <i class="fa fa-trash service-icon"></i>
             </div>
-            <div class="w3-half w3-center">
-                <form class="w3-container w3-card w3-white w3-padding-32">
-                    <div class="w3-section">
-                        <label>Name</label>
-                        <input class="w3-input w3-border" type="text" name="Name" required>
-                    </div>
-                    <div class="w3-section">
-                        <label>Email</label>
-                        <input class="w3-input w3-border" type="text" name="Email" required>
-                    </div>
-                    <div class="w3-section">
-                        <label>Message</label>
-                        <input class="w3-input w3-border" type="text" name="Message" required>
-                    </div>
-                    <button type="submit" class="w3-button w3-teal w3-right">SEND</button>
-                </form>
-            </div>
+            <h3 class="w3-center">Garbage Cleaning</h3>
+            <p>
+              We offer professional garbage removal and cleanup services for residential and commercial properties. 
+              Our eco-friendly disposal methods ensure a clean environment and peace of mind. 
+            </p>
+            <a href="#contact" class="learn-more">Get a Quote</a>
+          </div>
         </div>
-    </div>
-</div>
 
-<!-- Footer -->
-<footer class="w3-container w3-teal w3-center w3-padding-32">
-    <p>&copy; 2025 Sparkle and Shine Cleaning Services. All rights reserved.</p>
-</footer>
+        <!-- Window Cleaning Card -->
+        <div class="w3-col m6 s12 w3-margin-bottom">
+          <div class="service-card">
+            <div class="w3-center">
+              <i class="fa fa-window-maximize service-icon"></i>
+            </div>
+            <h3 class="w3-center">Window Cleaning</h3>
+            <p>
+              Brighten your view with our streak-free window cleaning. We handle interior and exterior windows of homes 
+              and offices, using professional-grade tools for a crystal-clear finish. 
+            </p>
+            <a href="#contact" class="learn-more">Schedule Service</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="w3-container w3-light-grey w3-padding-64">
+    <div class="w3-content" style="max-width: 900px;">
+      <h2 class="section-heading">Contact Us</h2>
+      <div class="w3-row w3-margin-top">
+        
+        <!-- Contact Info -->
+        <div class="w3-col m6 s12 w3-padding-24">
+          <div class="w3-center">
+            <img src="images/your-logo-filename.png" alt="Sparkle & Shine Logo" style="max-width:200px; margin-bottom:24px;">
+          </div>
+          <p class="w3-large w3-text-teal"><strong>Get in touch today!</strong></p>
+          <p>
+            <i class="fa fa-phone w3-text-teal"></i> <strong>Julian:</strong> (605) 961-8152<br>
+            <i class="fa fa-phone w3-text-teal"></i> <strong>Liam:</strong> (402) 804-0637<br>
+            <i class="fa fa-envelope w3-text-teal"></i> <strong>Email:</strong> SparkleaShine@outlook.com
+          </p>
+        </div>
+
+        <!-- Contact Form -->
+        <div class="w3-col m6 s12 w3-padding-24">
+          <form class="w3-white w3-padding-32 w3-card-4">
+            <div class="w3-section">
+              <label for="name">Name</label>
+              <input id="name" class="w3-input" type="text" name="Name" placeholder="Your full name" required>
+            </div>
+            <div class="w3-section">
+              <label for="email">Email</label>
+              <input id="email" class="w3-input" type="email" name="Email" placeholder="you@example.com" required>
+            </div>
+            <div class="w3-section">
+              <label for="message">Message</label>
+              <textarea id="message" name="Message" placeholder="How can we help you?" required></textarea>
+            </div>
+            <button type="submit" class="w3-button w3-right">SEND MESSAGE</button>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 <strong>Sparkle &amp; Shine Cleaning Services</strong>. All rights reserved.</p>
+    <p>
+      <a href="#services">Services</a> |
+      <a href="#contact">Contact</a>
+    </p>
+  </footer>
 
 </body>
-</html>                                  
+</html>
